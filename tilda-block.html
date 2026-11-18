@@ -1,0 +1,345 @@
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/style.css">
+<style>#allrecords .t123{padding:0!important} .t-records{overflow:visible}</style>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="lb"><span>Нейро<b>малина</b></span><span class="phrase">Готовим малину</span></div>
+  <img class="lmid" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/berry-s.webp" alt="">
+  <div class="cnt" id="cnt">0</div>
+  <div class="bar" id="bar"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<canvas id="ctrail" aria-hidden="true"></canvas><div class="cur" aria-hidden="true"></div><div class="cur-ring" aria-hidden="true"><span class="lbl"></span></div>
+
+<header id="hdr">
+  <div class="wrap">
+    <div class="nav">
+      <a class="logo" href="#top"><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/berry-s.webp" alt=""><span>Нейро<b>малина</b></span></a>
+      <nav class="menu"><a href="#webinar">Вебинар</a><a href="#program">Программа</a><a href="#author">Автор</a><a href="#price">Стоимость</a><a href="#faq">Вопросы</a></nav>
+      <a class="btn btn-coral mag" href="#webinar">На вебинар</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ПЕРВЫЙ ЭКРАН -->
+<section class="hero dark">
+  <canvas id="liquid"></canvas>
+  <div class="bg"></div>
+  <canvas id="parts"></canvas>
+  <div class="giant" data-depth="-0.02">МАЛИНА</div>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker"><i></i>Онлайн-курс по нейросетям для новичков</div>
+      <h1>
+        <span class="ln"><span>Половину рутины</span></span>
+        <span class="ln"><span>отдайте <em>нейросетям</em></span></span>
+      </h1>
+      <p class="lead hero-fade">Письма, посты, таблицы, фото и видео. За месяц научитесь поручать это нейросетям обычными словами. Без программирования и без английского.</p>
+      <div class="hero-btns hero-fade">
+        <a class="btn btn-coral mag" href="#webinar">Бесплатный вебинар <span class="ar">↗</span></a>
+        <a class="btn btn-line mag" href="#price">Курс за 9 900 ₽</a>
+      </div>
+      <div class="hero-meta hero-fade">
+        <div><b>4</b><span>недели</span></div>
+        <div><b>20</b><span>коротких уроков</span></div>
+        <div><b>5</b><span>модулей</span></div>
+      </div>
+    </div>
+    <div class="stage">
+      <img class="orb far" data-depth="0.25" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-lilac.webp" style="width:170px;left:2%;top:4%" alt="">
+      <img class="orb far" data-depth="0.18" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-pink.webp" style="width:110px;right:4%;bottom:10%" alt="">
+      <img class="orb" data-depth="0.45" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-torus.webp" style="width:150px;right:2%;top:2%" alt="">
+      <img class="orb near" data-depth="0.9" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-glass.webp" style="width:150px;left:4%;bottom:6%" alt="">
+      <img class="orb near" data-depth="1.1" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-coral.webp" style="width:70px;right:18%;bottom:26%" alt="">
+      <canvas id="spin" width="720" height="720" aria-label="Малина"></canvas>
+      <div class="shadow"></div>
+      <div class="tag3d" data-depth="0.7" style="left:-2%;top:30%"><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-mail.webp" alt="">Письмо клиенту готово</div>
+      <div class="tag3d" data-depth="0.55" style="right:-4%;top:58%"><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-robot.webp" alt="">Бот ответил на заявку</div>
+    </div>
+  </div>
+  <div class="scroll-hint">Листайте<i></i></div>
+</section>
+
+<div class="ticker" aria-hidden="true"><div class="row" id="tick"></div></div>
+
+<!-- МАНИФЕСТ -->
+<section class="manifest">
+  <img class="ai3d brain" data-speed="-0.04" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/ai/brain.webp" alt="Мозг из малины и стекла">
+  <img class="float-i" data-speed="0.2" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-pink.webp" style="width:90px;left:3%;bottom:40px;filter:blur(3px)" alt="">
+  <div class="wrap">
+    <span class="label">Зачем это вам</span>
+    <p id="mf" style="max-width:820px">Нейросети не заменят вас. Они заберут <span class="hl">скучное</span>: письма, отчёты, бесконечные посты. А вам оставят <span class="hl">интересное</span> и свободный вечер.</p>
+  </div>
+</section>
+
+<!-- БОЛИ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="split rv">
+      <div><span class="label">Знакомо?</span><h2 class="h2">Нейросети у всех есть,<br><span class="soft">а толку пока ноль</span></h2></div>
+      <img class="ai3d laptop" data-speed="-0.04" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/ai/laptop.webp" alt="">
+    </div>
+    <div class="pains">
+      <div class="pain rv"><span class="n">01</span><h3>Спросили, получили воду</h3><p>Открыли ЧатГПТ, получили общий ответ ни о чём и закрыли вкладку.</p></div>
+      <div class="pain rv"><span class="n">02</span><h3>Вечер на один пост</h3><p>Два часа над текстом, а впереди ещё три таких же и отчёт.</p></div>
+      <div class="pain rv"><span class="n">03</span><h3>С чего начать?</h3><p>Нейросетей сотни, советы разные. Какая работает в России и подходит вам?</p></div>
+      <div class="pain rv"><span class="n">04</span><h3>«Я же не технарь»</h3><p>Кажется, это для программистов. На деле нужно уметь писать по-русски.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ВИТРИНА УМЕНИЙ -->
+<section class="show" id="skills">
+  <div class="wrap">
+    <div class="split rv"><div><span class="label">Что вы будете уметь</span><h2 class="h2">Не обещаю.<br><span class="soft">Показываю</span></h2></div><p class="sub">Так выглядит то, что вы будете делать сами уже через месяц. Наведите мышку на любую карточку.</p></div>
+    <div class="bento">
+      <div class="tile t-chat rv">
+        <span class="tag">Модуль 2</span>
+        <div class="tt">Тексты за минуту</div><div class="td">Письма, посты, отчёты. Вы пишете задачу обычными словами, нейросеть отвечает готовым текстом.</div>
+        <div class="stagebox"><div class="win"><div class="bar"><i></i><i></i><i></i>Нейросеть</div><div class="msgs" id="msgs"></div></div></div>
+      </div>
+      <div class="tile t-img rv">
+        <span class="tag">Модуль 3</span>
+        <div class="tt">Картинки без дизайнера</div><div class="td">Описали словами, получили картинку.</div>
+        <div class="stagebox"><div class="gen" id="gen"><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/ai/brain.webp" alt=""><canvas></canvas><div class="scan"></div><div class="chip"><span>«мозг из малины и стекла»</span><b id="genp">0%</b></div></div></div>
+      </div>
+      <div class="tile t-bot rv">
+        <span class="tag">Модуль 5</span>
+        <div class="tt">Бот, который работает ночью</div><div class="td">Заявка пришла, нейросеть ответила клиенту, вам пришло уведомление. Пока вы спите.</div>
+        <div class="stagebox"><div class="flow" id="flow">
+          <svg viewBox="0 0 100 100" preserveAspectRatio="none"><defs><linearGradient id="lg" x1="0" x2="1"><stop offset="0" stop-color="#FF9DB8"/><stop offset="1" stop-color="#9B7BFF"/></linearGradient></defs>
+            <path id="p1" d="M14 55 C 30 20, 38 20, 50 50" fill="none" stroke="url(#lg)" stroke-width=".6" stroke-dasharray="2 2" vector-effect="non-scaling-stroke"/>
+            <path id="p2" d="M50 50 C 62 80, 70 80, 86 45" fill="none" stroke="url(#lg)" stroke-width=".6" stroke-dasharray="2 2" vector-effect="non-scaling-stroke"/>
+          </svg>
+          <div class="node" style="left:14%;top:55%"><div class="ic">📝</div>Заявка с сайта</div>
+          <div class="node mid" style="left:50%;top:50%"><div class="ic"><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/ai/robot.webp" alt=""></div>Нейросеть</div>
+          <div class="node" style="left:86%;top:45%"><div class="ic">✈️</div>Ответ в Телеграм</div>
+          <div class="toast" id="toast" style="top:0"><i>✓</i><span>Мария: ответ отправлен</span></div>
+        </div></div>
+      </div>
+      <div class="tile t-vid rv">
+        <span class="tag">Модуль 4</span>
+        <div class="tt">Ролики с озвучкой и субтитрами</div><div class="td">Нейросеть озвучит текст и сама расставит субтитры. Вам останется нажать «Опубликовать».</div>
+        <div class="stagebox"><div class="vid">
+          <div class="phone"><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/ai/robot.webp" alt=""><div class="subt" id="sub"></div><div class="prog-b"><i id="vprog"></i></div></div>
+          <div class="tracks">
+            <div class="trk"><b>Видео</b><div class="clip"></div></div>
+            <div class="trk"><b>Голос</b><div class="wave" id="wave"></div></div>
+            <div class="trk"><b>Субтитры</b><div class="clip c2"></div></div>
+          </div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ВЕБИНАР -->
+<section class="webinar dark" id="webinar">
+  <div class="bg"></div>
+  <div class="wrap web-grid">
+    <div class="rv">
+      <span class="free">Бесплатно</span><br>
+      <span class="label">Вебинар</span>
+      <h2 class="h2">Нейросеть<br><em>за один вечер</em></h2>
+      <p class="sub">Час, за который вы сделаете первую настоящую вещь с нейросетью. Я показываю на своём экране, вы повторяете вместе со мной.</p>
+      <div class="agenda">
+        <div><b>01</b>Какие нейросети работают в России и с какой начать</div>
+        <div><b>02</b>Как просить, чтобы ответ годился сразу</div>
+        <div><b>03</b>Живой показ: письмо, пост и картинка прямо на эфире</div>
+        <div><b>04</b>Как устроен курс и кому он подойдёт</div>
+      </div>
+    </div>
+    <div class="ticket-wrap rv">
+      <img class="mic" data-speed="-0.15" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-mic.webp" alt="">
+      <div class="ticket tilt">
+        <h3>Занять место на эфире</h3>
+        <div class="meta"><span>📅 <span class="ph">[дата]</span></span><span>⏰ <span class="ph">[время]</span> мск</span><span>около часа</span></div>
+        <form class="lead-form" data-ok="Готово! Ссылку на эфир пришлём перед началом.">
+          <input class="field" type="text" placeholder="Как вас зовут" required>
+          <input class="field" type="tel" placeholder="Телефон или ник в Телеграме" required>
+          <label class="agree"><input type="checkbox" required><span>Согласен на обработку персональных данных и с <a href="#">политикой конфиденциальности</a></span></label>
+          <button class="btn btn-coral" type="submit">Хочу на вебинар <span class="ar">↗</span></button>
+        </form>
+        <div class="ok"></div>
+        <div class="gift"><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/berry-s.webp" alt=""><span>Напишите слово <b>МАЛИНА</b> в сообщения нашей группы <a href="https://vk.ru/club242145217">ВКонтакте</a> и получите 10 готовых запросов для нейросети.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ПРОГРАММА -->
+<section class="prog" id="program">
+  <div class="wrap split rv" style="margin-bottom:0">
+    <div><span class="label">Программа</span><h2 class="h2">Пять ступенек:<br><span class="soft">от первого вопроса до своего бота</span></h2></div>
+    <p class="sub">Каждый модуль заканчивается практикой на ваших задачах, а не на выдуманных примерах.</p>
+  </div>
+  <div class="hpin">
+    <div class="htrack">
+      <article class="mod" data-lbl="Листайте"><span class="no">01</span><img class="ic" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-chat.webp" alt=""><h3>Первые шаги</h3><ul><li>Какие нейросети работают в России</li><li>Как просить, чтобы поняли с первого раза</li><li>Почему нейросеть ошибается и как проверять</li></ul></article>
+      <article class="mod"><span class="no">02</span><img class="ic" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-mail.webp" alt=""><h3>Рутина</h3><ul><li>Письма клиентам и коллегам</li><li>Посты в вашем стиле</li><li>Таблицы, отчёты, пересказ длинных документов</li></ul></article>
+      <article class="mod"><span class="no">03</span><img class="ic" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-photo.webp" alt=""><h3>Фото</h3><ul><li>Картинки для соцсетей и рекламы</li><li>Улучшение своих фотографий</li><li>Обложки и баннеры без дизайнера</li></ul></article>
+      <article class="mod"><span class="no">04</span><img class="ic" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-play.webp" alt=""><h3>Видео</h3><ul><li>Короткие ролики для соцсетей</li><li>Озвучка и субтитры</li><li>Как оживить фотографию</li></ul></article>
+      <article class="mod"><span class="no">05</span><img class="ic" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-robot.webp" alt=""><h3>Автоматизация и чат-боты</h3><ul><li>Бот, который отвечает клиентам за вас</li><li>Публикации в соцсетях по расписанию</li><li>Связки сервисов без строчки кода</li></ul></article>
+      <article class="mod cta"><img class="robot-c" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/ai/robot.webp" alt="Робот-малинка"><div><h3>Начните с бесплатного эфира</h3><p style="margin-top:14px">Посмотрите, как это работает, и решите, нужен ли вам курс.</p></div><a class="btn btn-coral mag" href="#webinar">На вебинар <span class="ar">↗</span></a></article>
+    </div>
+  </div>
+</section>
+
+<!-- ДО / ПОСЛЕ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="split rv"><div><span class="label">Через месяц</span><h2 class="h2">Что изменится</h2></div></div>
+    <div class="ba">
+      <img class="ai3d hourglass" id="hglass" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/ai/hourglass.webp" alt="Песочные часы с малиной">
+      <div class="side before rv"><h3>Сейчас</h3><ul><li><i>✕</i>Вечер уходит на письма и посты</li><li><i>✕</i>Картинки ищете в интернете или просите знакомых</li><li><i>✕</i>Видео кажется сложным и дорогим</li><li><i>✕</i>Нейросеть отвечает не то, что нужно</li></ul></div>
+      <div class="side after rv"><h3>После курса</h3><ul><li><i>✓</i>Тексты пишутся за минуты, вы только правите</li><li><i>✓</i>Обложки и картинки делаете сами</li><li><i>✓</i>Собираете короткие ролики для соцсетей</li><li><i>✓</i>Есть свой помощник для повторяющихся задач</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ФОРМАТ -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="split rv"><div><span class="label">Как устроено</span><h2 class="h2">Короткие уроки,<br><span class="soft">в которых видно каждый клик</span></h2></div><p class="sub">Я в кадре, рядом мой экран. Посмотрели, повторили у себя, сдали задание.</p></div>
+    <div class="format">
+      <div class="fmt rv"><b>4</b><span>недели</span><p>Удобно проходить вечерами после работы</p></div>
+      <div class="fmt rv"><b>15</b><span>минут максимум</span><p>Столько длится самый длинный урок</p></div>
+      <div class="fmt rv"><b>ДЗ</b><span>с обратной связью</span><p>Проверяю задания и подсказываю, что улучшить</p></div>
+      <div class="fmt rv"><b>Чат</b><span>учеников</span><p>Вопросы, находки и идеи друг друга. Доступ к урокам: <span class="ph">[уточнить]</span></p></div>
+    </div>
+  </div>
+</section>
+
+<!-- АВТОР -->
+<section class="sec" id="author" style="padding-top:20px">
+  <div class="wrap author">
+    <div class="me3d rv" id="me3d">
+      <div class="me-card"><div class="me-word">АЗАМАТ</div><div class="me-grid"></div></div>
+      <img class="L ring-b" data-z="0.35" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/ring-back.webp" alt="">
+      <img class="L glassA" data-z="0.2" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-glass.webp" alt="">
+      <div class="L me-wrap" data-z="0.55">
+        <img class="me" crossorigin="anonymous" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/me.webp" alt="Азамат Гуфранов">
+      </div>
+      <img class="L ring-f" data-z="0.75" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/ring-front.webp" alt="">
+      <img class="L berryA" data-z="1.2" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/berry-m.webp" alt="">
+      <div class="L chip c1" data-z="0.95"><i>🤖</i>Чат-боты</div>
+      <div class="L chip c2" data-z="1.05"><i>⚙️</i>Автоматизация</div>
+      <div class="L chip c3" data-z="0.9"><i>🎬</i>Видео с нейросетью</div>
+      <div class="stamp">практик, <b>не блогер</b></div>
+      <div class="me-hint" id="mehint">Наведите курсор или нажмите</div>
+    </div>
+    <div class="rv">
+      <span class="label">Кто ведёт</span>
+      <h2 class="h2">Азамат<br>Гуфранов</h2>
+      <p class="sub">Маркетолог. Работаю с нейросетями каждый день, а не рассказываю о них со сцены. В курсе только то, чем пользуюсь сам.</p>
+      <div class="proof">
+        <div><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-robot.webp" alt="">Собрал бота, который принимает и раскладывает заявки</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-chat.webp" alt="">Сделал бота, который сам собирает отзывы о компании</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-mail.webp" alt="">Настроил автопубликации для двух телеграм-каналов</div>
+        <div><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-play.webp" alt="">Делаю рекламные видео с нейросетями</div>
+      </div>
+      <p class="quote">«Учу тому, что <b>экономит время</b> мне самому»</p>
+    </div>
+  </div>
+</section>
+
+<!-- СТРАХИ -->
+<section class="sec" style="padding-top:20px">
+  <div class="wrap">
+    <div class="split rv"><div><span class="label">Сомневаетесь?</span><h2 class="h2">Это нормально.<br><span class="soft">Разберём честно</span></h2></div></div>
+    <div class="fears">
+      <div class="fear rv"><h3>«Я не технарь»</h3><p>И не нужно. С нейросетью говорят обычными словами, как с помощником. Умеете писать сообщения, значит справитесь.</p></div>
+      <div class="fear rv"><h3>«Они же ошибаются»</h3><p>Бывает. Поэтому в курсе отдельный урок: как проверять ответы и где нейросети доверять нельзя.</p></div>
+      <div class="fear rv"><h3>«Нет времени»</h3><p>Урок занимает 10–15 минут. А то, чему научитесь, начнёт экономить время уже в первую неделю.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ЦЕНА -->
+<section class="sec" id="price" style="padding-top:20px">
+  <div class="wrap">
+    <div class="split rv"><div><span class="label">Стоимость</span><h2 class="h2">Начните с эфира<br><span class="soft">или сразу с курса</span></h2></div></div>
+    <div class="pricing">
+      <div class="plan free rv">
+        <span class="pill">Первый шаг</span>
+        <h3>Вебинар «Нейросеть за вечер»</h3>
+        <div class="price" style="color:var(--lilac-d)">0 ₽</div>
+        <div class="when">Около часа, онлайн, <span class="ph">[дата]</span></div>
+        <ul><li><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-lilac.webp" alt="">Какие нейросети работают в России</li><li><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-lilac.webp" alt="">Как просить, чтобы ответ годился сразу</li><li><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-lilac.webp" alt="">Живой показ на экране</li><li><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-lilac.webp" alt="">Ответы на ваши вопросы</li></ul>
+        <a class="btn btn-dark mag" href="#webinar">Хочу на вебинар <span class="ar">↗</span></a>
+      </div>
+      <div class="plan main dark rv">
+        <div class="bgi"></div>
+        <img class="price-ic" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/berry-m.webp" alt="">
+        <span class="pill">Всё включено</span>
+        <h3>Курс «Нейромалина»</h3>
+        <div class="price">9 900 ₽</div>
+        <div class="when">Старт потока: <span class="ph">[дата]</span></div>
+        <ul><li><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-coral.webp" alt="">5 модулей, около 20 уроков</li><li><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-coral.webp" alt="">Домашние задания с обратной связью</li><li><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-coral.webp" alt="">Чат учеников</li><li><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-coral.webp" alt="">Нейросети, которые работают в России</li></ul>
+        <div class="bonus"><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/i-chat.webp" alt=""><span><b>Бонусы:</b> «Малиновая шпаргалка» на 100 готовых запросов и подборка нейросетей для России</span></div>
+        <form class="lead-form" data-ok="Спасибо! Перезвоню, отвечу на вопросы и пришлю ссылку на оплату.">
+          <input class="field" type="text" placeholder="Ваше имя" required>
+          <input class="field" type="tel" placeholder="Телефон" required>
+          <label class="agree"><input type="checkbox" required><span>Согласен на обработку персональных данных и с <a href="#" style="color:#fff">политикой конфиденциальности</a></span></label>
+          <button class="btn btn-coral" type="submit">Записаться на курс <span class="ar">↗</span></button>
+        </form>
+        <div class="ok"></div>
+        <div class="phone">Или позвоните:<b>8 917 795-07-71</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ВОПРОСЫ -->
+<section class="sec" id="faq" style="padding-top:20px">
+  <div class="wrap faq-grid">
+    <div class="rv"><span class="label">Вопросы</span><h2 class="h2">Частые<br><span class="soft">вопросы</span></h2><img class="bubble" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/ai/bubble.webp" alt=""></div>
+    <div class="faq rv">
+      <details><summary>Вебинар правда бесплатный?</summary><p>Да. Оставляете заявку и приходите. В конце расскажу про курс, а решать вам.</p></details>
+      <details><summary>Нужен ли мощный компьютер?</summary><p>Нет. Почти всё работает в обычном браузере, многое получится и с телефона.</p></details>
+      <details><summary>Нужно ли платить за нейросети?</summary><p>Начинаем с бесплатных версий. Где платная правда даёт больше, скажу честно и покажу, как обойтись без неё.</p></details>
+      <details><summary>Будут ли нейросети работать в России?</summary><p>Да. В курсе подборка тех, что работают у нас, и инструкция, как к ним подключиться.</p></details>
+      <details><summary>Я совсем новичок. Не будет сложно?</summary><p>Курс сделан для новичков. Каждый шаг показан на экране, вы просто повторяете.</p></details>
+      <details><summary>Сколько времени нужно в неделю?</summary><p>Примерно час-два: уроки короткие, остальное время уходит на практику с вашими задачами.</p></details>
+      <details><summary>Что если не успею за месяц?</summary><p>Проходите в своём темпе. Срок доступа к урокам: <span class="ph">[уточнить]</span>.</p></details>
+      <details><summary>Как оплатить курс?</summary><p>Оставьте заявку или позвоните по номеру 8 917 795-07-71, пришлю ссылку на оплату.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ФИНАЛ -->
+<section class="final dark">
+  <div class="bg"></div>
+  <canvas id="rain"></canvas>
+  <img class="orb" data-speed="-0.2" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-torus.webp" style="width:160px;left:8%;top:12%" alt="">
+  <img class="ai3d robot" data-speed="-0.06" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/ai/robot.webp" alt="">
+  <img class="orb" data-speed="0.15" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-glass.webp" style="width:120px;left:6%;bottom:14%" alt="">
+  <img class="orb" data-speed="-0.1" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/o-pink.webp" style="width:90px;right:20%;bottom:12%;filter:blur(3px)" alt="">
+  <div class="wrap">
+    <img class="final-berry" id="fberry" src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/berry.webp" alt="Малина">
+    <h2>Рутина пусть делается сама.<br><em>А вы займитесь интересным</em></h2>
+    <p>Жизнь малина, когда нейросети работают на вас.</p>
+    <div class="btns">
+      <a class="btn btn-coral mag" href="#webinar">Бесплатный вебинар <span class="ar">↗</span></a>
+      <a class="btn btn-white mag" href="#price">Курс за 9 900 ₽ <span class="ar">↗</span></a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div class="big">Нейро<b>малина</b></div>
+    <div>Часть платформы «Карьера Клик»<br><span class="ph">[ИП или самозанятый, ФИО, ИНН]</span></div>
+    <div><a href="https://t.me/neiromalina">Телеграм</a><a href="https://vk.ru/club242145217">ВКонтакте</a><a href="#">Оферта</a><a href="#">Политика конфиденциальности</a></div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/app.js"></script>
