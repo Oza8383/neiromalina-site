@@ -495,3 +495,11 @@ body,#allrecords,.t-records{background:#FBF6F1!important}
 /* скрытая форма Тильды для приёма заявок */
 #rec5948450501{position:absolute!important;left:-10000px!important;top:0!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
 .t-form-success-popup,.t-form-success-popup__overlay{display:none!important}
+
+/* портрет в полный рост (супергерой) */
+.me-wrap{left:-5%!important;right:-5%!important}
+.me-wrap .me{bottom:0!important}
+.ring-b,.ring-f{top:-8%!important}
+.c1{left:auto!important;right:-12%!important;top:22%!important}
+.c2{top:48%!important}
+@media(max-width:960px){.c1{right:-2%!important}}
