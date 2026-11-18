@@ -491,3 +491,6 @@ body,#allrecords,.t-records{background:#FBF6F1!important}
   .tile{padding:24px}
   .tile .tag{position:static;align-self:flex-start;margin-bottom:12px}
 }
+
+/* скрытая форма Тильды для приёма заявок */
+#rec5948450501{position:absolute!important;left:-10000px!important;top:0!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}

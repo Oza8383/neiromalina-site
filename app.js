@@ -104,8 +104,21 @@ let last = 0; const hdr = document.getElementById('hdr');
 addEventListener('scroll', () => { const y = scrollY; hdr.classList.toggle('hide', y > last && y > 300); last = y; }, {passive: true});
 
 /* формы */
+/* наши формы передают заявку в скрытую форму Тильды: оттуда она уходит в Телеграм, на почту и в «Заявки» */
 document.querySelectorAll('.lead-form').forEach(f => f.addEventListener('submit', e => {
-  e.preventDefault(); const ok = f.nextElementSibling; ok.textContent = f.dataset.ok; f.style.display = 'none'; ok.style.display = 'block';
+  e.preventDefault();
+  const ok = f.nextElementSibling, inp = f.querySelectorAll('.field');
+  const name = (inp[0].value || '').trim().slice(0, 80), contact = (inp[1].value || '').trim().slice(0, 80);
+  if (!name || !contact) return;
+  const type = f.closest('#webinar') ? 'Бесплатный вебинар' : 'Курс за 9 900 ₽';
+  const tf = document.querySelector('#rec5948450501 form, [id^="rec5948450501"] form');
+  if (tf) {
+    const set = (n, v) => { const i = tf.querySelector('[name="' + n + '"]'); if (i) { i.value = v; i.dispatchEvent(new Event('input', {bubbles: true})); i.dispatchEvent(new Event('change', {bubbles: true})); } };
+    set('Name', name);
+    set('Comments', 'Заявка: ' + type + '\nКонтакт: ' + contact + '\nСтраница: ' + location.href.split('?')[0]);
+    const b = tf.querySelector('[type="submit"], .t-submit'); if (b) b.click();
+  }
+  ok.textContent = f.dataset.ok; f.style.display = 'none'; ok.style.display = 'block';
 }));
 
 /* разбиваем манифест на слова */
