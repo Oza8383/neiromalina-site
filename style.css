@@ -478,3 +478,7 @@ footer{padding:60px 0 50px;color:var(--muted);font-size:14px}
 .cur-ring.has-lbl .lbl{transform:translate(-50%,-50%) scale(1)}
 
 @media (prefers-reduced-motion:reduce){.ai3d,.robot-c,.bubble,.orb,.mod .ic,.mic{animation:none!important}.loader{display:none}}
+
+/* Тильда: перебиваем фон сайта и отступы */
+body,#allrecords,.t-records{background:#FBF6F1!important}
+#allrecords .t123,#allrecords .t-rec{padding:0!important}
