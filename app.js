@@ -104,6 +104,7 @@ let last = 0; const hdr = document.getElementById('hdr');
 addEventListener('scroll', () => { const y = scrollY; hdr.classList.toggle('hide', y > last && y > 300); last = y; }, {passive: true});
 
 /* формы */
+document.addEventListener('submit', e => { if (e.target.closest && e.target.closest('#rec5948450501') && !window.tildaForm) e.preventDefault(); }, true);
 /* наши формы передают заявку в скрытую форму Тильды: оттуда она уходит в Телеграм, на почту и в «Заявки» */
 document.querySelectorAll('.lead-form').forEach(f => f.addEventListener('submit', e => {
   e.preventDefault();
@@ -116,7 +117,12 @@ document.querySelectorAll('.lead-form').forEach(f => f.addEventListener('submit'
     const set = (n, v) => { const i = tf.querySelector('[name="' + n + '"]'); if (i) { i.value = v; i.dispatchEvent(new Event('input', {bubbles: true})); i.dispatchEvent(new Event('change', {bubbles: true})); } };
     set('Name', name);
     set('Comments', 'Заявка: ' + type + '\nКонтакт: ' + contact + '\nСтраница: ' + location.href.split('?')[0]);
-    const b = tf.querySelector('[type="submit"], .t-submit'); if (b) b.click();
+    let tries = 0;
+    const send = () => {
+      if (!window.tildaForm && tries++ < 120) { setTimeout(send, 500); return; }
+      const b = tf.querySelector('[type="submit"], .t-submit'); if (b) b.click();
+    };
+    send();
   }
   ok.textContent = f.dataset.ok; f.style.display = 'none'; ok.style.display = 'block';
 }));

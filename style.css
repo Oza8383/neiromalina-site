@@ -494,3 +494,4 @@ body,#allrecords,.t-records{background:#FBF6F1!important}
 
 /* скрытая форма Тильды для приёма заявок */
 #rec5948450501{position:absolute!important;left:-10000px!important;top:0!important;width:1px!important;height:1px!important;overflow:hidden!important;opacity:0!important;pointer-events:none!important}
+.t-form-success-popup,.t-form-success-popup__overlay{display:none!important}
