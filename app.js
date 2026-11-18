@@ -22,7 +22,7 @@ if (window.Lenis && !reduce) {
 const cv = document.getElementById('spin'), ctx = cv.getContext('2d');
 const F = 36, frames = []; let loaded = 0, cur = -1;
 for (let i = 0; i < F; i++) {
-  const im = new Image(); im.src = 'https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/spin/b' + String(i).padStart(2, '0') + '.webp';
+  const im = new Image(); im.src = 'https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@main/img/spin/b' + String(i).padStart(2, '0') + '.webp';
   im.onload = () => { loaded++; if (i === 0) draw(0); }; frames.push(im);
 }
 function draw(i) {
@@ -55,7 +55,7 @@ const words = ['письма', 'посты', 'таблицы', 'фото', 'ви
 const icons = ['berry-s', 'o-lilac', 'o-glass'];
 const row = document.getElementById('tick');
 let html = '';
-for (let k = 0; k < 2; k++) words.forEach((w, i) => html += `<span>${w}<img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/${icons[i % 3]}.webp" alt=""></span>`);
+for (let k = 0; k < 2; k++) words.forEach((w, i) => html += `<span>${w}<img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@main/img/${icons[i % 3]}.webp" alt=""></span>`);
 row.innerHTML = html;
 
 /* курсор */
@@ -70,7 +70,7 @@ if (fine) {
     r.style.transform = r.classList.contains('has-lbl') ? `translate(${rx}px,${ry}px) translate(-50%,-50%)` : `translate(${rx}px,${ry}px) translate(-50%,-50%) rotate(${ang}deg) scale(${sc},${1/Math.sqrt(sc)})`;
     requestAnimationFrame(l); })();
   /* шлейф искр и малинок, взрыв по клику */
-  const tc=document.getElementById('ctrail'),tx=tc.getContext('2d'),berryI=new Image();berryI.src='https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/berry-s.webp';
+  const tc=document.getElementById('ctrail'),tx=tc.getContext('2d'),berryI=new Image();berryI.src='https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@main/img/berry-s.webp';
   let TP=[],lx=x,ly=y,TW,TH,dpr=Math.min(devicePixelRatio||1,2);
   function ts(){TW=innerWidth;TH=innerHeight;tc.width=TW*dpr;tc.height=TH*dpr;tx.setTransform(dpr,0,0,dpr,0,0);} ts();addEventListener('resize',ts);
   const cols=['255,94,79','155,123,255','255,110,160','106,69,224'];
@@ -198,7 +198,7 @@ document.querySelectorAll('.tile').forEach(t=>t.addEventListener('pointermove',e
       await sleep(80);u.classList.add('on');
       for(let i=0;i<=q.length;i++){u.textContent=q.slice(0,i);await sleep(reduce?0:22);}
       await sleep(350);
-      const m=document.createElement('div');m.className='m a';m.innerHTML='<div class="ai-h"><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/berry-s.webp" alt="">Нейросеть</div><span class="dots"><b></b><b></b><b></b></span>';box.appendChild(m);
+      const m=document.createElement('div');m.className='m a';m.innerHTML='<div class="ai-h"><img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@main/img/berry-s.webp" alt="">Нейросеть</div><span class="dots"><b></b><b></b><b></b></span>';box.appendChild(m);
       await sleep(60);m.classList.add('on');await sleep(900);
       const t=document.createElement('span');m.querySelector('.dots').replaceWith(t);
       const c=document.createElement('span');c.className='caret';m.appendChild(c);
@@ -286,7 +286,7 @@ document.querySelectorAll('.tile').forEach(t=>t.addEventListener('pointermove',e
 /* ===== частицы, разбегающиеся от курсора ===== */
 (function(){
   const c=document.getElementById('parts'),x=c.getContext('2d'); if(reduce) return;
-  const berry=new Image();berry.src='https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/berry-s.webp';
+  const berry=new Image();berry.src='https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@main/img/berry-s.webp';
   let W,H,P=[],px=-999,py=-999;
   function size(){W=c.width=c.clientWidth;H=c.height=c.clientHeight;}
   size();addEventListener('resize',size);
@@ -307,7 +307,7 @@ document.querySelectorAll('.tile').forEach(t=>t.addEventListener('pointermove',e
 /* ===== малиновый дождь в финале ===== */
 (function(){
   const c=document.getElementById('rain'),x=c.getContext('2d'); if(reduce) return;
-  const im=new Image();im.src='https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@v1/img/berry-s.webp';
+  const im=new Image();im.src='https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@main/img/berry-s.webp';
   let W,H,B=[],on=false;
   function size(){W=c.width=c.clientWidth;H=c.height=c.clientHeight;}
   size();addEventListener('resize',size);
