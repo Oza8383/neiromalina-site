@@ -504,3 +504,9 @@ body,#allrecords,.t-records{background:#FBF6F1!important}
 .c2{top:48%!important}
 @media(max-width:960px){.c1{right:-2%!important}}
 .ring-b,.ring-f{top:-24%!important}
+
+/* колибри */
+.hbird{position:absolute;left:50%;top:50%;z-index:7;pointer-events:none;will-change:transform}
+.hbird img{display:block;width:100%;max-width:none;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45));animation:hbuzz .09s linear infinite alternate}
+@keyframes hbuzz{from{translate:0 -1.5px;rotate:-.4deg}to{translate:0 1.5px;rotate:.4deg}}
+@media (prefers-reduced-motion:reduce){.hbird{display:none}}

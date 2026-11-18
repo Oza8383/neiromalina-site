@@ -34,13 +34,70 @@ let auto = 0, scrollRot = 0, mx = 0, my = 0, tmx = 0, tmy = 0;
 addEventListener('pointermove', e => { tmx = e.clientX / innerWidth - .5; tmy = e.clientY / innerHeight - .5; });
 const depthEls = [...document.querySelectorAll('.hero [data-depth]')];
 const hero = document.querySelector('.hero');
+/* ===== Колибри: приносит и уносит малину ===== */
+const stageEl = document.querySelector('.stage');
+const hbEl = document.createElement('div'); hbEl.className = 'hbird';
+hbEl.innerHTML = '<img src="https://cdn.jsdelivr.net/gh/Oza8383/neiromalina-site@5dbfb1e9216e7ef6c85e6754a646e9bb9fb0086a/img/hummingbird.webp" alt="">';
+stageEl.appendChild(hbEl);
+const HB = {x: 3000, y: -1500, r: 0};          // центр птицы относительно центра сцены, px
+const BR = {on: reduce ? 0 : 1, s: .45, x: 0, y: 0, k: 1}; // on: ягода в клюве; k: 0..1 доля «покоя»
+let hbS = 720, hbBW = 600, hbBH = 500;
+function hbGeom() { hbS = cv.offsetWidth || 600; hbBW = hbS * .85; hbBH = hbBW * .834; hbEl.style.width = hbBW + 'px'; }
+hbGeom(); addEventListener('resize', hbGeom);
+// кончик клюва (0.003; 0.53 от картинки) и хвостик ягоды (0.503; 0.004 от кадра)
+const tipOf = () => ({x: HB.x + (.003 - .5) * hbBW, y: HB.y + (.53 - .5) * hbBH});
+const hangCenter = (s) => { const t = tipOf(); return {x: t.x + (.497 - .503) * hbS * s, y: t.y + (.454 - .004) * hbS * s}; };
+// где должна висеть птица, чтобы хвостик ягоды с центром (cx,cy) и масштабом s оказался в клюве
+const birdFor = (cx, cy, s) => { const tx = cx - (.497 - .503) * hbS * s, ty = cy - (.454 - .004) * hbS * s; return {x: tx - (.003 - .5) * hbBW, y: ty - (.53 - .5) * hbBH}; };
+let hbTl = null;
+function restPos() { const sy = scrollY; return {x: mx * 30, y: my * 24 + sy * .18, s: 1 - Math.min(sy / 2600, .2)}; }
+function deliver() {
+  if (reduce || !window.gsap) { BR.on = 0; return; }
+  hbTl && hbTl.kill(); hbGeom();
+  const vw = innerWidth;
+  BR.on = 1; BR.s = .45; HB.r = 8;
+  Object.assign(HB, birdFor(vw * .9, -hbS * 1.1, .45));
+  const hover = birdFor(0, 0, .45);
+  hbTl = gsap.timeline()
+    .to(HB, {x: hover.x, y: hover.y - 20, r: -4, duration: 1.6, ease: 'power3.out'})
+    .to(HB, {y: hover.y, r: 0, duration: .5, ease: 'sine.inOut'})
+    .add(() => { const c = hangCenter(BR.s); BR.on = 0; BR.x = c.x; BR.y = c.y; BR.k = 0; })
+    .to(BR, {s: 1, x: 0, y: 0, k: 1, duration: 1.1, ease: 'elastic.out(1,.55)'})
+    .to(HB, {x: -innerWidth * 1.1, y: -hbS * 1.3, r: -16, duration: 1.4, ease: 'power2.in'}, '<.15');
+}
+function takeAway() {
+  if (reduce || !window.gsap) return;
+  hbTl && hbTl.kill(); hbGeom();
+  const rp = restPos();
+  BR.on = 0; BR.x = rp.x; BR.y = rp.y; BR.s = rp.s; BR.k = 0;
+  const hover = birdFor(rp.x, rp.y, rp.s);
+  Object.assign(HB, {x: innerWidth * .9, y: hover.y - hbS * .8, r: 10});
+  hbTl = gsap.timeline()
+    .to(HB, {x: hover.x, y: hover.y, r: 0, duration: 1.1, ease: 'power3.out'})
+    .add(() => { BR.on = 1; })
+    .to(BR, {s: .45, duration: .6, ease: 'back.in(1.4)'})
+    .to(HB, {x: -innerWidth * 1.1, y: -hbS * 1.5, r: -18, duration: 1.5, ease: 'power2.in'}, '>-.1');
+}
+window.__hb = {deliver, takeAway};
+if (!window.gsap) BR.on = 0;
+
 (function loop() {
   auto += reduce ? 0 : .06;
   mx += (tmx - mx) * .06; my += (tmy - my) * .06;
   const sy = scrollY;
   if (sy < hero.offsetHeight * 1.2) {
-    draw(auto + sy / 22 + mx * 8);
-    cv.style.transform = `translate(-50%,-50%) translate(${mx * 30}px,${my * 24 + sy * .18}px) rotate(${mx * 6}deg) scale(${1 - Math.min(sy / 2600, .2)})`;
+    const tt = performance.now() / 1000;
+    const bob = Math.sin(tt * 9) * 3;
+    hbEl.style.transform = `translate(-50%,-50%) translate(${HB.x}px,${HB.y + bob}px) rotate(${HB.r}deg)`;
+    if (BR.on) {
+      const c = hangCenter(BR.s), sw = Math.sin(tt * 4.5) * 4;
+      cv.style.transform = `translate(-50%,-50%) translate(${c.x}px,${c.y + bob}px) scale(${BR.s}) rotate(${sw}deg)`;
+    } else {
+      draw(auto + sy / 22 + mx * 8);
+      const rp = restPos(), k = BR.k;
+      const x = BR.x + (rp.x - BR.x) * k, y = BR.y + (rp.y - BR.y) * k, s = k >= 1 ? rp.s : BR.s;
+      cv.style.transform = `translate(-50%,-50%) translate(${x}px,${y}px) rotate(${mx * 6 * k}deg) scale(${s})`;
+    }
     depthEls.forEach(el => {
       const d = +el.dataset.depth;
       const base = el.classList.contains('giant') ? 'translate(-50%,-50%) ' : '';
@@ -371,9 +428,10 @@ if (!hasG || !window.ScrollTrigger || reduce) {
 /* вход первого экрана, после заставки */
 gsap.set('.hero-fade',{y:30,opacity:0});gsap.set('#spin',{scale:.5,opacity:0});gsap.set('.stage .orb,.tag3d',{opacity:0,scale:.4});gsap.set('.giant',{opacity:0});
 heroCb=()=>{
+  deliver();
   gsap.to('.hero h1 .ln span', {y: 0, duration: 1.4, ease: 'expo.out', stagger: .12});
   gsap.to('.hero-fade', {y: 0, opacity: 1, duration: 1.2, ease: 'expo.out', stagger: .1, delay: .35});
-  gsap.to('#spin', {scale: 1, opacity: 1, duration: 1.8, ease: 'expo.out'});
+  gsap.to('#spin', {opacity: 1, duration: .6});
   gsap.to('.stage .orb,.tag3d', {opacity: 1, scale: 1, duration: 1.3, ease: 'back.out(1.7)', stagger: .07, delay: .4});
   gsap.to('.giant', {opacity: 1, duration: 2, delay: .3});
 };
@@ -423,6 +481,8 @@ ScrollTrigger.matchMedia({
     gsap.utils.toArray('.mod .ic').forEach((ic, i) => gsap.to(ic, {rotate: i % 2 ? 14 : -14, y: -30, ease: 'none', scrollTrigger: {trigger: '.hpin', start: 'top top', end: () => '+=' + dist(), scrub: true}}));
   }
 });
+
+ScrollTrigger.create({trigger: '.hero', start: 'top -14%', onEnter: () => takeAway(), onLeaveBack: () => deliver()});
 
 /* финальная ягода выезжает и крутится */
 gsap.fromTo('#fberry', {y: 120, rotate: -25, scale: .7}, {y: 0, rotate: 8, scale: 1, ease: 'none', scrollTrigger: {trigger: '.final', start: 'top bottom', end: 'center center', scrub: true}});
